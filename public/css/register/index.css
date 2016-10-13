@@ -1,0 +1,511 @@
+/* ::::: https://account.xiaomi.com/static/res/23f48a9/account-static/respassport/acc-2014/css/reset.css ::::: */
+
+html, body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, li, a, span, caption, th, td, form, fieldset, legend, input, button, textarea, address {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+
+ol, ul {
+	list-style: none outside none;
+}
+
+li {
+	list-style: none outside none;
+}
+
+fieldset, img {
+	border: 0px none;
+}
+
+em, tt, i {
+	font-style: normal;
+}
+
+address, cite, dfn, em, var {
+	font-style: normal;
+}
+
+input, button, textarea, select {
+	font-size: 100%;
+}
+
+input, button, select, textarea {
+	outline: medium none;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+a, label, :focus {
+	outline: 0px none;
+}
+
+a, img, input {
+	border: 0px none;
+}
+
+body {
+	font-size: 12px;
+	font-family: arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+}
+
+button, input, select, textarea {
+	font-family: arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+	color: rgb(59, 59, 59);
+	font-weight: normal;
+}
+
+.clearfix:after {
+	display: block;
+	content: " ";
+	height: 0px;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.clearfix {
+}
+
+@media not all, not all {
+	a {
+		background-color: transparent;
+	}
+}
+
+input {
+	background: none repeat scroll 0% 0% transparent;
+	border: 0px none;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], a {
+}
+
+.t_c {
+	text-align: center;
+}
+
+.c_b:before, .c_b:after {
+	content: "";
+	display: block;
+}
+
+.c_b:after {
+	clear: both;
+}
+
+.c_b {
+}
+
+input {
+	color: rgb(51, 51, 51);
+}
+
+input:required, input:invalid {
+	box-shadow: none;
+}
+
+input::-moz-focus-inner {
+	border: 0px none;
+}
+/* ::::: https://account.xiaomi.com/static/res/db7e07b/account-static/respassport/acc-2014/css/layout.css ::::: */
+
+.n-footer {
+	color: rgb(157, 157, 157);
+	text-align: center;
+	height: 80px;
+	margin-top: -80px;
+}
+
+.nf-intro {
+	padding: 10px;
+}
+
+.nf-link-area {
+	text-align: center;
+}
+
+.nf-link-area li {
+	display: inline-block;
+}
+
+.nf-link-area a {
+	display: inline-block;
+	padding: 0px 10px;
+	color: rgb(117, 117, 117);
+}
+
+.nf-link-area a:hover, .nf-link-area a.current {
+	color: rgb(51, 51, 51);
+}
+
+.err_tip, .err_tip_independ {
+	margin-bottom: 5px;
+	line-height: 20px;
+	font-size: 12px;
+	color: rgb(255, 103, 0);
+	display: none;
+}
+
+.icon_error, .err_tip_independ {
+	background-image: url('../../undefined');
+	background-repeat: no-repeat;
+}
+
+.icon_error {
+	width: 14px;
+	height: 14px;
+	margin: -1px 5px 0px 0px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.err_tip span {
+	vertical-align: middle;
+}
+
+body {
+	background: none repeat scroll 0% 0% rgb(249, 249, 249);
+	color: rgb(102, 102, 102);
+}
+
+a {
+	color: rgb(70, 99, 156);
+}
+
+.a_critical {
+	color: rgb(171, 171, 171);
+}
+
+.a_critical:hover {
+	color: rgb(255, 126, 0);
+}
+
+input {
+	color: rgb(51, 51, 51);
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	display: -moz-box;
+	-moz-box-align: center;
+	-moz-box-pack: center;
+}
+
+.wrap {
+	padding-bottom: 80px;
+}
+
+@media not all {
+	.wrap {
+		padding-top: 100px;
+	}
+}
+
+@media not all {
+}
+
+.layout {
+	width: 854px;
+	margin: 0px auto;
+	padding-bottom: 10px;
+}
+
+.beianlink {
+	color: rgb(157, 157, 157);
+}
+
+.n-frame {
+	background: none repeat scroll 0% 0% rgb(255, 255, 255);
+	padding: 34px 34px 0px;
+	border: 1px solid rgb(230, 230, 230);
+	border-radius: 10px;
+	min-height: 400px;
+}
+
+.device-frame {
+	border: medium none;
+	border-radius: 0px;
+	padding-top: 0px;
+}
+
+.title-big, .title-bigger, .title-biggest, .title-normal, .title_big30 {
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+.title_big30 {
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.external_logo_area {
+	padding-bottom: 40px;
+	display: block;
+}
+
+.milogo {
+	width: 49px;
+	height: 48px;
+	margin: 0px auto;
+	display: block;
+	cursor: default;
+	background-image: url('../../img/milogo.png');
+}
+
+.title-item {
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(230, 230, 230);
+	clear: both;
+}
+
+.device-frame {
+	padding-bottom: 30px;
+}
+
+.device-frame .title-item {
+	border-bottom: medium none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.chkcode_img {
+	margin-left: 7px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.btn332 {
+	width: 330px;
+	height: 42px;
+	margin: 0px auto;
+	line-height: 42px;
+	text-align: center;
+	font-size: 14px;
+	display: block;
+	cursor: pointer;
+	border: 1px solid rgb(232, 232, 232);
+}
+
+.btn_reg_1 {
+	background-color: rgb(255, 103, 0);
+	margin-top: 15px;
+	border: 1px solid rgba(186, 186, 186, 0.3);
+	color: rgb(255, 255, 255);
+}
+
+.btn_reg_1:hover {
+	background: none repeat scroll 0% 0% rgb(255, 147, 106);
+}
+
+.btn_reg_2 {
+	background: none repeat scroll 0% 0% rgb(255, 255, 255);
+	margin-top: 10px;
+	border: 1px solid rgb(221, 221, 221);
+	color: rgb(124, 124, 124);
+}
+
+.btn_reg_2:hover {
+	color: rgb(51, 51, 51);
+}
+
+.labelbox, .input_bg, .tits_list, .borderbox {
+	border: 1px solid rgb(232, 232, 232);
+}
+
+.labelbox, .input_bg {
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+}
+
+.labelbox input, .input_bg input {
+	height: 20px;
+	line-height: 20px;
+	padding: 10px;
+	display: inline-block;
+}
+
+.icon_cirarr {
+	background: url('../../img/icon_user.png') repeat scroll 0% 0% transparent;
+}
+
+.iconfacebook {
+	background-image: url('../../img/facebook.png');
+	width: 24px;
+	height: 24px;
+	margin-right: 14px;
+	margin-top: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.zh_CN .facebook_area, .zh_TW .facebook_area, .zh_HK .facebook_area {
+	display: none;
+}
+
+.facebook_area {
+	display: block;
+}
+/* ::::: https://account.xiaomi.com/static/res/d0d08fa/account-static/respassport/acc-2014/css/registerpwd.css ::::: */
+
+.listwrap {
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.tits {
+	height: 40px;
+	padding-left: 14px;
+	line-height: 40px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid rgb(232, 232, 232);
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+}
+
+.tits tt {
+	float: left;
+	width: 275px;
+	border-right: 1px solid rgb(232, 232, 232);
+	cursor: pointer;
+}
+
+.icon_cirarr {
+	float: right;
+	background: url('../../img/icon_user.png') repeat scroll 0% 0% transparent;
+	width: 16px;
+	height: 16px;
+	margin: 11px 12px 0px;
+}
+
+.country-container {
+	width: 100%;
+	background: none repeat scroll 0% 0% rgb(255, 255, 255);
+	height: 270px;
+	line-height: 30px;
+	border: 1px solid rgb(232, 232, 232);
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	left: 0px;
+	top: 41px;
+	z-index: 98;
+	display: none;
+}
+
+.country-container .header, .country-container h6 {
+	background: none repeat scroll 0% 0% rgb(252, 222, 204);
+	padding-left: 10px;
+	margin-bottom: 6px;
+	line-height: 30px;
+	color: rgb(239, 91, 0) ! important;
+}
+
+.country-container .record, .country-container p {
+	padding: 0px 10px;
+	line-height: 39px;
+	clear: both;
+	overflow: hidden;
+	color: rgb(0, 0, 0);
+	border-bottom: 1px solid rgb(224, 224, 224);
+	cursor: pointer;
+}
+
+.country-container .record:hover, .country-container .record.chk, .country-container p:hover, .country-container p.chk {
+	background: none repeat scroll 0% 0% rgb(234, 234, 234);
+}
+
+.country-container .record span {
+	height: 39px;
+	overflow: hidden;
+}
+
+.country-container .record-country {
+	float: left;
+	max-width: 74%;
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+}
+
+.country-container .record-code {
+	float: right;
+	max-width: 20%;
+	color: rgb(157, 157, 157);
+}
+
+.mauto, .regbox {
+	margin: 0px auto;
+}
+
+.pb15, .inputbg {
+	padding-bottom: 15px;
+}
+
+.ftbold, .msg em, .msg a {
+	font-weight: bold;
+}
+
+body {
+	overflow-y: auto;
+}
+
+.regbox {
+	width: 332px;
+	padding: 30px 0px;
+	line-height: 20px;
+}
+
+.msg {
+	margin-top: 10px;
+	color: rgb(157, 157, 157);
+}
+
+.msg a {
+	color: rgb(51, 51, 51);
+}
+
+.inputbg input {
+	width: 310px;
+}
+
+.tits {
+}
+
+.err_tip {
+	margin-top: -8px;
+}
+
+.inputcode .code {
+	width: 150px;
+}
+
+.inputcode .labelbox {
+}
+
+.other_register_area {
+	padding-bottom: 20px;
+	border-top: 1px solid rgb(230, 230, 230);
+}
+
+.facebook_area {
+	display: none ! important;
+}
