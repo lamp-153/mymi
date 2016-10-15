@@ -1,25 +1,27 @@
 @extends('home.base.base')
-@section('title','小米商城首页')
+@section('title','小米商城-小米手机、红米Note、小米笔记本')
 @section('content')
      <div id="big_banner_wrap">
          <ul id="banner_menu_wrap">
             @foreach($pid as $list)
-             <li class="active">
+             <li class="active"img>
                  <a>{{ $list->category_name }}</a>
-                 <div class="banner_menu_content" style="width: 600px; top: -20px;">
+                 <a class="banner_menu_i">&gt;</a>
+                 <div class="banner_menu_content" style="width: 300px;">
                     @foreach($goods as $good)
                      <ul class="banner_menu_content_ul">
-                        @if($list->id == $good->pid && $good->is_onsale == 1)
-                         <li>
-                             <a><img src="{{ URL('uploads/goods') }}/s_{{$good->goods_img}}"></a>　<a>{{ $good->goods_name }}</a><span>选购</span>
+                         @if($list->id == $good->pid)
+                         <li class='a'>
+                             <a><img src="{{ URL('uploads/goods') }}/s_{{$good->goods_img}}"></a>　<a>{{ $good->goods_name }}</a><span><a href='{{ URL("home/phone/{$good->id}") }}'>选购</a></span>
                          </li>
-                         @endif
+                         @endif 
                      </ul>
                      @endforeach
                  </div>           
              </li>
-             @endforeach  
+             @endforeach 
          </ul>
+
          <div id="big_banner_pic_wrap">
              <ul id="big_banner_pic">
                  <li><img src="img/T1hiDvBvVv1RXrhCrK.jpg"></li>

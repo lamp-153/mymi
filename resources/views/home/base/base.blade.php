@@ -2,7 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>@yield('title')</title>
+    <link rel="icon" href="{{ asset('img/mi.jpg') }}"/>
     <link rel="stylesheet" href="{{ asset('css/xiaomi.css') }}"/>
     <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('js/jquery.animate-colors-min.js') }}"></script>
@@ -34,9 +35,9 @@
                      <div id="head_landing">
                          <a class="head_nav_a"><span>尊敬的 {{ session('user')->user_name }} 用户：<span></a>
                          <span>|</span>
-                         <a class="head_nav_a" href="info">个人中心</a>
+                         <a class="head_nav_a" href="{{ URL('home/info') }}">个人中心</a>
                          <span>|</span>
-                         <a class="head_nav_a" href="home/logout">退出</a>
+                         <a class="head_nav_a" href="{{ URL('home/logout') }}">退出</a>
                      </div>
                      <div id="head_car">
                          <a class="head_car_text" href="">购物车（0）</a>
@@ -68,8 +69,7 @@
                  <img src="img/logo1.png" style="height:70px;">
              </div>
              <div id="menu_nav">
-                 <ul>
-                    <li style="color:#FFFFFF;">111111</li>
+                 <ul style="color:#FFFFFF;margin-left:80px;">
                     <img src="img/111.jpg" style="width:550px;height:70px;margin-top:15px;">
                  </ul>
              </div>
@@ -289,7 +289,7 @@
                         <dt>友情链接</dt>
                         @foreach($link as $user)
                              <dd><a style="color:#CACACA" href="{{ $user->links_url }}">{{ $user->links_name }}</a></dd>
-                         @endforeach 
+                        @endforeach 
                      </dl>
                  </div>
                  <div class="foot_bottom_r">

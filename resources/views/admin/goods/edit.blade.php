@@ -22,8 +22,8 @@
                         <div class="mws-form-item">
                             <select name='pid' class="large">
                                 <option value=''>---请选择---</option>
-                                @foreach($pid as $pid)
-                                <option value="{{ $pid->id }}" {{ ($user->id == $pid->id)? 'selected' :''}}>{{ $pid->category_name }}</option>
+                                @foreach($pid as $pids)
+                                <option value="{{ $pids->id }}" {{ ($user->pid == $pids->id)?'selected':''}}>{{ $pids->category_name }}</option>
                                 @endforeach
                             </select>
                         </div>

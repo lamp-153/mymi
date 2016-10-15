@@ -26,6 +26,12 @@ class GoodsController extends Controller
     /****************跳转到修改页面*****************/
     public function edit($id)
     {	
+      /*$db = \DB::table('store_goods')
+        ->join('store_category','store_goods.pid','=','store_category.id')
+        ->select('store_goods.*','store_category.category_name')
+        ->get();
+      $list = $db->where('id','=',$id);*/
+
     	//1.获取到要修改的商品信息
     	$goods = \DB::table('store_goods')->where('id',$id)->first();
       //2.获取商品父类信息。
@@ -125,7 +131,7 @@ class GoodsController extends Controller
     		return back()->with('msg','请填写完整信息');
 	    }
     	//3.图片缩放
-    	$img = Image::make("./uploads/goods/".$filename)->resize(20,20,function($constraint) {
+    	$img = Image::make("./uploads/goods/".$filename)->resize(40,40,function($constraint) {
           	$constraint->aspectRatio();
           	$constraint->upsize();
       	});
@@ -140,14 +146,14 @@ class GoodsController extends Controller
       $db = \DB::table('store_goods')->where('goods_name',$data['goods_name'])->first();
       if($db){
         //用户名存在，跳转到上一页面
-        return back()->with('msg','链接名称已存在');
+        return back()->with('msg','商品名称已存在');
       }
       //3.执行添加，获取最大id值
   		$id = \DB::table('store_goods')->insertGetId($data);
   		//4.判断是否添加成功
   		if($id > 0){
   			//添加成功，跳转到用户列表
-  			return redirect('admin/goods');
+  			return redirect("admin/infoadd/{$id}");
   		}else{
   			//添加失败，跳转到上一页面
   			return back()->with('msg','添加失败');

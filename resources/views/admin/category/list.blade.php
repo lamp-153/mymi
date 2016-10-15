@@ -24,7 +24,7 @@
                 </thead>
                 <tbody style='text-align:center'>
                 	@foreach($list as $user)
-                    <tr>
+                    <tr id="{{ $user->id }}">
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->category_name }}</td>
                         <td>
@@ -58,7 +58,7 @@
                     success:function(data){
                         if(data>0){
                             //删除对应行
-                            $('td:contains('+id+')').parents('tr').remove();
+                            $('#'+id).remove();
                             alert('删除成功');
                         }else{
                             alert('删除失败');

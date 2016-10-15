@@ -16,7 +16,7 @@ class InfoController extends Controller
       // 获取当前登录用户的信息   用where条件
     	$list = \DB::table('store_user')->where('id','=',session('user')->id)->first();
   		// 显示个人信息页面
-    	return view("info",['list'=>$list]);
+    	return view("home.info.info",['list'=>$list]);
     }
 
     //显示修改用户头像页面
@@ -25,7 +25,7 @@ class InfoController extends Controller
       // 获取当前登录用户的信息   用where条件
       $list = \DB::table('store_user')->where('id','=',session('user')->id)->first();
       // 显示修改用户头像页面
-      return view("portrait",['list'=>$list]);
+      return view("home.info.portrait",['list'=>$list]);
 
     }
 
@@ -71,7 +71,7 @@ class InfoController extends Controller
     	//3.判断影响函数
     	if($m > 0){
     		//大于0时，修改成功，重定向到个人信息页面
-    		return redirect('info');
+    		return redirect('home/info');
     	}else{
     		//小于0时，修改失败，跳转到上一页面
     		return back()-with('msg','修改失败');
@@ -84,7 +84,7 @@ class InfoController extends Controller
       // 获取当前登录用户的信息   用where条件
       $list = \DB::table('store_user')->where('id','=',session('user')->id)->first();
       // 显示修改用户基本资料页面
-      return view("data",['list'=>$list]);
+      return view("home.info.data",['list'=>$list]);
 
     }
 
@@ -99,7 +99,7 @@ class InfoController extends Controller
     	//3.判断影响函数
     	if($ob > 0){
     		//大于0时，修改成功，重定向到个人信息页面
-    		return redirect('info');
+    		return redirect('home/info');
     	}else{
     		//小于0时，修改失败，跳转到上一页面
     		return back()-with('msg','修改失败');

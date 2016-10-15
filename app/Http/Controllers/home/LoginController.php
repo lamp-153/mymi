@@ -14,8 +14,8 @@ class LoginController extends Controller
     //让前台页面显示
     public function index()
     {
-       //1.获取到要修改的商品信息
-        $goods = \DB::table('store_goods')->get();
+       //1.获取到商品信息
+        $goods = \DB::table('store_goods')->where('is_onsale',1)->get();
         //2.获取商品父类信息。
         $pid = \DB::table('store_category')->get();
         //3.获取友情链接表中所有的信息

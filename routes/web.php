@@ -10,8 +10,9 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-
+Route::get('a',function(){
+	return view('admin.goods.aa');
+});
 
 //上传头像页面
 Route::get('admin/uplode',function(){
@@ -21,9 +22,6 @@ Route::get('admin/uplode',function(){
 Route::post('admin/doUplode','DemoController@doUplode');
 //验证码路由配置
 Route::get("home/captcha/{tmp}","DemoController@captcha");
-
-
-
 
 
 
@@ -42,20 +40,20 @@ Route::post('home/doregister','home\LoginController@doRegister');
 //退出登录
 Route::get("home/logout","home\LoginController@logout");
 //  个人信息页面
-Route::get("info","home\InfoController@info");
+Route::get("home/info","home\InfoController@info");
 // 修改用户头像页面
-Route::get('update',"home\InfoController@update");
+Route::get('home/update',"home\InfoController@update");
 
 // 执行头像修改页面
-Route::post('doUpdate/{id}',"home\InfoController@doUpdate");
+Route::post('home/doUpdate/{id}',"home\InfoController@doUpdate");
 
 //跳到修改个人资料页面
-Route::get('data',"home\InfoController@data");
+Route::get('home/data',"home\InfoController@data");
 //执行修改个人资料页面
-Route::post('doData/{id}',"home\InfoController@doData");
+Route::post('home/doData/{id}',"home\InfoController@doData");
 
 //商品详情信息页面
-Route::get('phone',"home\PhoneController@phone");
+Route::get('home/phone/{id}',"home\PhoneController@phone");
 
 
 /***********************后台路由配置开始*********************/
@@ -84,11 +82,19 @@ Route::get('phone',"home\PhoneController@phone");
 		/*************后台友情链接路由配置****************/
 		Route::resource('links','admin\LinksController');
 
-		/***************后台分类别路由配置****************/
+		/***************后台商品类别路由配置**************/
 		Route::resource('category','admin\CategoryController');
 
-		/*************后台商品类别路由配置****************/
+		/*****************后台商品路由配置****************/
 		Route::resource('goods','admin\GoodsController'); 
+
+		/*************后台商品详情路由配置****************/
+		Route::resource('goodsInfo','admin\GoodsInfoController'); 
+		//商品详情的添加
+		Route::get('infoadd/{id}','admin\GoodsInfoController@infoAdd');
+
+		/*************后台评论表路由有配置*****************/
+		Route::resource('comm','admin\CommController');
 	});	
 
 

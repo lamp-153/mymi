@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html xml:lang="zh-CN">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>小米手机5立即购买-小米商城</title>
-    <meta name="viewport" content="width=1226">
-    <meta name="description" content="小米手机5开放购买页面支持4G网络，全网通，包括标准版、高配版、尊享版，有多种颜色可以选择">
-    <meta name="keywords" content="小米5,小米手机,小米手机官网">
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/phone/index.css') }}" media="all"></head>
-  <body>
-    <!-- <div class="site-header site-mini-header">
-      <div class="container">
-        <div class="header-logo">
-          <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-f4006c1551f77f22', '//www.mi.com/index.html', 'pcpid']);" data-stat-id="f4006c1551f77f22" class="logo ir" href="http://www.mi.com/index.html" title="小米官网">小米官网</a></div>
-        <div class="header-title" id="J_miniHeaderTitle"></div>
-        <div class="topbar-info" id="J_userInfo">
-          <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-bf3aa4c80c0ac789', '//order.mi.com/site/login', 'pcpid']);" data-stat-id="bf3aa4c80c0ac789" class="link" href="http://order.mi.com/site/login?redirectUrl=http://item.mi.com/buyphone/mi5" data-needlogin="true">登录</a>
-          <span class="sep">|</span>
-          <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-749b1369201c13fb', 'https://account.xiaomi.com/pass/register', 'pcpid']);" data-stat-id="749b1369201c13fb" class="link" href="https://account.xiaomi.com/pass/register">注册</a></div>
-      </div>
-    </div> -->
-    <!-- .site-mini-header END -->
+@extends('home.base.good')
+@section('title','购买手机')
+@section('content')
   
     <div class="container breadcrumbs">
       <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-3c70fc7b75c45226', '//www.mi.com/index.html', 'pcpid']);" data-stat-id="3c70fc7b75c45226" href="http://www.mi.com/index.html">首页</a>
@@ -42,37 +20,26 @@
     <div class="container buy-choose-box">
       <div class="hd">
         <ul class="clearfix pro-nav-bar pro-nav-9" id="J_navBar">
-          <li class="J_item" data-pro="redmipro">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-f81ccd829138b34a', '//item.mi.com/buyphone/redmipro', 'pcpid']);" data-stat-id="f81ccd829138b34a" href="http://item.mi.com/buyphone/redmipro">红米Pro</a></li>
-          <li class="J_item" data-pro="note4">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-f9da1bbaf184d795', '//item.mi.com/buyphone/note4', 'pcpid']);" data-stat-id="f9da1bbaf184d795" href="http://item.mi.com/buyphone/note4">红米Note 4</a></li>
-          <li class="J_item" data-pro="note3">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-b2b49e393a206242', '//item.mi.com/buyphone/note3', 'pcpid']);" data-stat-id="b2b49e393a206242" href="http://item.mi.com/buyphone/note3">红米Note 3</a></li>
-          <li class="J_item" data-pro="hongmi3s">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-a74478dc3c05f9e5', '//item.mi.com/buyphone/hongmi3s', 'pcpid']);" data-stat-id="a74478dc3c05f9e5" href="http://item.mi.com/buyphone/hongmi3s">红米手机3S</a></li>
-          <li class="J_item current" data-pro="mi5">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-ced339f1b81e7098', '//item.mi.com/buyphone/mi5', 'pcpid']);" data-stat-id="ced339f1b81e7098" href="http://item.mi.com/buyphone/mi5">小米手机5</a></li>
-          <li class="J_item" data-pro="mimax">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-321c7e008ef8885a', '//item.mi.com/buyphone/mimax', 'pcpid']);" data-stat-id="321c7e008ef8885a" href="http://item.mi.com/buyphone/mimax">小米Max</a></li>
-          <li class="J_item" data-pro="hongmi3">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-9877eaac29b2a075', '//item.mi.com/buyphone/hongmi3', 'pcpid']);" data-stat-id="9877eaac29b2a075" href="http://item.mi.com/buyphone/hongmi3">红米手机3</a></li>
-          <li class="J_item" data-pro="hongmi3x">
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-a8bad50fd4494c2d', '//item.mi.com/buyphone/hongmi3x', 'pcpid']);" data-stat-id="a8bad50fd4494c2d" href="http://item.mi.com/buyphone/hongmi3x">红米手机3X</a></li>
-          <li>
-            <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-bd09f5035411d4ab', '//www.mi.com/compare/', 'pcpid']);" data-stat-id="bd09f5035411d4ab" href="http://www.mi.com/compare/">对比手机</a></li>
+          @foreach($lists as $lists)
+              <li class="J_item" data-pro="redmipro">
+                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-f81ccd829138b34a', '//item.mi.com/buyphone/redmipro', 'pcpid']);" data-stat-id="f81ccd829138b34a" href='{{ URL("home/phone/{$lists->id}") }}'>{{ $lists->goods_name }}</a>
+              </li>
+          @endforeach
         </ul>
       </div>
       <div class="bd">
         <div class="pro-choose-main clearfix" id="J_chooseMain">
           <div class="pro-view">
-            <img style="height: 80%;" src="./img/mi5.jpg" alt="小米手机5" id="J_proImg"></div>
+            <img style="height: 80%;" src="{{ asset('/img/mi5.jpg') }}" alt="小米手机5" id="J_proImg"></div>
           <div class="pro-info">
             <div class="pro-title clearfix">
               <h1>
-                <span class="pro-name J_proDesc">购买小米手机5</span>
-                <span class="pro-price J_proPrice">1599元</span></h1>
+                @foreach($list as $v)
+                <span class="pro-name J_proDesc">购买{{ $v->goods_price }}</span>
+                <span class="pro-price J_proPrice">元</span></h1>
+                @endforeach
               <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-dd154a5081536325', '//www.mi.com/mi5/', 'pcpid']);" data-stat-id="dd154a5081536325" href="http://www.mi.com/mi5/" class="pro-more" target="_top" id="J_proMore">深入了解产品&gt;</a></div>
-            <p style="color: red;">9月29日0点开售</p>
+            <p style="color: red;"></p>
             <p>
             </p>
             <div id="J_proStep">
@@ -81,25 +48,26 @@
                   <i class="pro-version-desc-icon">!</i>
                   <span class="pro-version-desc J_verDesc" data-index="1">高通骁龙820处理器 最高主频 1.8GHz，3GB内存，32GB容量，全网通3.0</span></div>
                 <ul class="step-list clearfix J_stepList">
-                  <li class="J_stepItem   active" data-index="1" data-node-id="770" data-desc="高通骁龙820处理器 最高主频 1.8GHz，3GB内存，32GB容量，全网通3.0" title="标准版 3GB内存+32GB容量" data-title-price="1599元">标准版 3GB内存+32GB容量</li>
-                  <li class="J_stepItem" data-index="1" data-node-id="771" data-desc="高通骁龙820处理器 最高主频 2.15GHz，3GB内存，64GB容量，全网通3.0" title="高配版 3GB内存+64GB容量" data-title-price="1799元">高配版 3GB内存+64GB容量</li>
-                  <li class="J_stepItem" data-index="1" data-node-id="772" data-desc="高通骁龙820处理器 最高主频 2.15GHz，4GB内存，128GB容量，全网通3.0" title="尊享版 4GB内存+128GB容量" data-title-price="2399元起">尊享版 4GB内存+128GB容量</li></ul>
+                    @foreach($list as $va)
+                    <li class="J_stepItem   active" style="height: 48px; width: 542px;" data-index="1" data-node-id="770" data-desc="高通骁龙820处理器 最高主频 1.8GHz，3GB内存，32GB容量，全网通3.0" title="标准版 3GB内存+32GB容量" data-title-price="1599元">{{$va->goods_info_type}} + {{$va->goods_info_color}}</li>
+                    @endforeach
+                </ul>  
               </div>
-              <div data-index="2" class="pro-choose-step J_step">
+              <!-- <div data-index="2" class="pro-choose-step J_step">
                 <div class="step-title">2. 选择颜色
                   <i class="pro-version-desc-icon">!</i>
                   <span class="pro-version-desc J_verDesc" data-index="2"></span>
                 </div>
                 <ul class="step-list clearfix J_stepList">
                   <li class="J_stepItem" data-index="2" data-node-id="774" data-gid="2160700024" data-img="./img///c1.mifile.cn/f/i/15/item/buyphone/mi5-yin.jpg" title="白色 1599元" data-title-price="1599元" data-opensell="1" data-opensell-status="1" data-opensell-url="//cart.mi.com/cart/recommend/goods_id/2160700024">
-                    <img src="./img/mi4-icon-bai.png" alt="白色">白色</li>
+                    <img src="{{ asset('img/mi4-icon-bai.png') }}" alt="白色">白色</li>
                   <li class="J_stepItem" data-index="2" data-node-id="776" data-gid="2160700026" data-img="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-jin.jpg" title="金色 1599元" data-title-price="1599元" data-opensell="1" data-opensell-status="1" data-opensell-url="//cart.mi.com/cart/recommend/goods_id/2160700026">
-                    <img src="./img/note3-icon-jin.png" alt="金色">金色</li>
+                    <img src="{{ asset('img/note3-icon-jin.png') }}" alt="金色">金色</li>
                   <li class="J_stepItem" data-index="2" data-node-id="775" data-gid="2160700025" data-img="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-hei.jpg" title="黑色 1599元" data-title-price="1599元" data-opensell="1" data-opensell-status="1" data-opensell-url="//cart.mi.com/cart/recommend/goods_id/2160700025">
-                    <img src="./img/mi4-icon-hei.png" alt="黑色">黑色</li>
+                    <img src="{{ asset('img/mi4-icon-hei.png') }}" alt="黑色">黑色</li>
                   <li class="J_stepItem" data-index="2" data-node-id="804" data-gid="2160700027" data-img="//./img/c1.mifile.cn/f/i/g/2015/cn-index/mi5-zi-webfile.jpg" title="淡紫色 1599元" data-title-price="1599元" data-opensell="1" data-opensell-status="1" data-opensell-url="//cart.mi.com/cart/recommend/goods_id/2160700027">
-                    <img src="./img/minote-icon-fen.png" alt="淡紫色">淡紫色</li></ul>
-              </div>
+                    <img src="{{ asset('img/minote-icon-fen.png') }}" alt="淡紫色">淡紫色</li></ul>
+              </div> -->
             </div>
             <div class="choose-result-msg" id="J_chooseResultMsg">
               <span class="msg-tit">您选择了以下产品:</span>
@@ -117,22 +85,22 @@
       <div class="pro-detail-box">
         <div class="section section-image is-visible">
           <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-a7da58bcedffe1fe', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="a7da58bcedffe1fe" target="_top" href="http://www.mi.com/mi5/">
-            <img src="./img/mi5-shenruliaojie.jpg" class="lazyload" data-img="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-shenruliaojie.jpg"></a>
+            <img src="{{ asset('img/mi5-shenruliaojie.jpg') }}" class="lazyload" data-img="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-shenruliaojie.jpg"></a>
         </div>
         <div class="section section-slider is-visible">
           <div class="slider J_slide">
             <div class="slides-wrapper">
               <div class="slide">
-                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo1.jpg" style="background-image: url('./img/mi5-lunbo1.jpg');"></a>
+                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo1.jpg" style="background-image: url('{{ asset('img/mi5-lunbo1.jpg') }}');"></a>
               </div>
               <div style="display: none;" class="slide">
-                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo2.jpg" style="background-image: url('./img/mi5-lunbo2.jpg');"></a>
+                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo2.jpg" style="background-image: url('{{ asset('img/mi5-lunbo2.jpg') }}');"></a>
               </div>
               <div style="display: none;" class="slide">
-                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo3.jpg" style="background-image: url('./img/mi5-lunbo3.jpg');"></a>
+                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo3.jpg" style="background-image: url('{{ asset('img/mi5-lunbo3.jpg') }}');"></a>
               </div>
               <div style="display: none;" class="slide">
-                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo4.jpg" style="background-image: url('./img/mi5-lunbo4.jpg');"></a>
+                <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-8d1f8254531d4c8f', 'http://www.mi.com/mi5/', 'pcpid']);" data-stat-id="8d1f8254531d4c8f" target="_top" class="lazyload" href="http://www.mi.com/mi5/" data-bg="//./img/c1.mifile.cn/f/i/15/item/buyphone/mi5-lunbo4.jpg" style="background-image: url('{{ asset('img/mi5-lunbo4.jpg') }}');"></a>
               </div>
             </div>
             <div class="pagination">
@@ -145,7 +113,7 @@
         </div>
         <div class="section section-image is-visible">
           <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-f56f8fdeb670acc5', 'http://www.mi.com/service/safe/', 'pcpid']);" data-stat-id="f56f8fdeb670acc5" target="_top" href="http://www.mi.com/service/safe/">
-            <img src="./img/mi5-yiwaibao2.jpg" class="lazyload" data-img="//./imgc1.mifile.cn/f/i/15/item/buyphone/mi5-yiwaibao2.jpg"></a>
+            <img src="{{ asset('img/mi5-yiwaibao2.jpg') }}" class="lazyload" data-img="//./imgc1.mifile.cn/f/i/15/item/buyphone/mi5-yiwaibao2.jpg"></a>
         </div>
         <div class="section section-specs container is-visible">
           <div class="spec-title" id="J_showSpec">了解小米手机5参数
@@ -293,7 +261,7 @@
                     <p class="price">
                       <em>99</em>元</p></div>
                   <div class="item-pic">
-                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1ycK_BjYv1RXrhCrK.jpg" src="./img/t1yck_bjyv1rxrhcrk.jpg" alt=""></div>
+                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1ycK_BjYv1RXrhCrK.jpg" src="{{ asset('img/t1yck_bjyv1rxrhcrk.jpg') }}" alt=""></div>
                 </a>
               </li>
               <li>
@@ -303,7 +271,7 @@
                     <p class="price">
                       <em>69</em>元</p></div>
                   <div class="item-pic">
-                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1._C_BKAv1RXrhCrK.jpg" src="./img/t1._c_bkav1rxrhcrk.jpg" alt=""></div>
+                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1._C_BKAv1RXrhCrK.jpg" src="{{ asset('img/t1._c_bkav1rxrhcrk.jpg') }}" alt=""></div>
                 </a>
               </li>
               <li>
@@ -313,7 +281,7 @@
                     <p class="price">
                       <em>49</em>元</p></div>
                   <div class="item-pic">
-                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1FXE_BgDv1RXrhCrK.jpg" src="./img/t1fxe_bgdv1rxrhcrk.jpg" alt=""></div>
+                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1FXE_BgDv1RXrhCrK.jpg" src="{{ asset('img/t1fxe_bgdv1rxrhcrk.jpg') }}" alt=""></div>
                 </a>
               </li>
               <li>
@@ -323,7 +291,7 @@
                     <p class="price">
                       <em>29</em>元</p></div>
                   <div class="item-pic">
-                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1t2K_B4L_1RXrhCrK.jpg" src="./img/t1t2k_b4l_1rxrhcrk.jpg" alt=""></div>
+                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1t2K_B4L_1RXrhCrK.jpg" src="{{ URL('img/t1t2k_b4l_1rxrhcrk.jpg') }}" alt=""></div>
                 </a>
               </li>
               <li>
@@ -333,7 +301,7 @@
                     <p class="price">
                       <em>69</em>元</p></div>
                   <div class="item-pic">
-                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1ggWQBybT1RXrhCrK.jpg" src="./img/t1ggwqbybt1rxrhcrk.jpg" alt=""></div>
+                    <img class="lazyload" data-img="//./img/i1.mifile.cn/a1/T1ggWQBybT1RXrhCrK.jpg" src="{{ asset('img/t1ggwqbybt1rxrhcrk.jpg') }}" alt=""></div>
                 </a>
               </li>
             </ul>
@@ -418,7 +386,7 @@
       <div class="modal-footer clearfix">
         <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-2d63fe270ff4b9d4', '', 'pcpid']);" data-stat-id="2d63fe270ff4b9d4" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</a></div>
     </div>
-    <div class="site-footer">
+   <!--  <div class="site-footer">
       <div class="container">
         <div class="footer-service">
           <ul class="list-service clearfix">
@@ -549,9 +517,9 @@
             <img src="./img/v-logo-3.png" alt="网上交易保障中心"></a>
         </div>
       </div>
-      <div class="slogan ir">探索黑科技，小米为发烧而生</div></div>
+      <div class="slogan ir">探索黑科技，小米为发烧而生</div></div> -->
     <!-- .site-footer END -->
-    <div id="J_modalWeixin" class="modal fade modal-hide modal-weixin" data-width="480" data-height="520">
+    <!-- <div id="J_modalWeixin" class="modal fade modal-hide modal-weixin" data-width="480" data-height="520">
       <div class="modal-hd">
         <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-cfd3189b8a874ba4', '', 'pcpid']);" data-stat-id="cfd3189b8a874ba4" class="close" data-dismiss="modal">
           <i class="iconfont"></i></a>
@@ -562,7 +530,7 @@
         <img alt="" src="./img/qr.png" height="375" width="375"></div>
     </div>
     <!-- .modal-weixin END -->
-    <div class="modal modal-hide modal-bigtap-queue" id="J_bigtapQueue">
+    <!--<div class="modal modal-hide modal-bigtap-queue" id="J_bigtapQueue">
       <div class="modal-body">
         <span class="close" data-dismiss="modal" aria-hidden="true">退出排队</span>
         <div class="con">
@@ -582,9 +550,9 @@
           <div class="poster poster-5"></div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- .xm-dm-queue END -->
-    <div id="J_bigtapError" class="modal modal-hide modal-bigtap-error">
+    <!-- <div id="J_bigtapError" class="modal modal-hide modal-bigtap-error">
       <span class="close" data-dismiss="modal" aria-hidden="true">
         <i class="iconfont"></i></span>
       <div class="modal-body">
@@ -625,9 +593,9 @@
           <ul class="clearfix" id="J_bigtapRecommentList"></ul>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- .xm-dm-error END -->
-    <div id="J_modal-globalSites" class="modal fade modal-hide modal-globalSites" data-width="640">
+    <!-- <div id="J_modal-globalSites" class="modal fade modal-hide modal-globalSites" data-width="640">
       <div class="modal-hd">
         <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-d63900908fde14b1', '', 'pcpid']);" data-stat-id="d63900908fde14b1" class="close" data-dismiss="modal">
           <i class="iconfont"></i></a>
@@ -648,7 +616,8 @@
           <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-4426c5dac474df5f', 'http://www.mi.com/en/', 'pcpid']);" data-stat-id="4426c5dac474df5f" href="http://www.mi.com/en/">Global Home</a>
           <a onclick="_msq.push(['trackEvent', '9899b068fcb38b0e-261bb8cf155fb56b', 'http://www.mi.com/mena/', 'pcpid']);" data-stat-id="261bb8cf155fb56b" href="http://www.mi.com/mena/">MENA</a></p>
       </div>
-    </div>
-    <!-- .modal-globalSites END --></body>
+    </div> -->
+    <!-- .modal-globalSites END --><!-- </body>
 
-</html>
+</html> -->
+@endsection

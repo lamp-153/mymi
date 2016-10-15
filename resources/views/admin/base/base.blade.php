@@ -14,10 +14,14 @@
 
 <!-- Plugin Stylesheets first to ease overrides -->
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/colorpicker/colorpicker.css') }}" media="screen">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/imgareaselect/css/imgareaselect-default.css') }}" media="screen">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/jgrowl/jquery.jgrowl.css') }}" media="screen">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/custom-plugins/wizard/wizard.css') }}" media="screen">
 
 <!-- Required Stylesheets -->
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/bootstrap/css/bootstrap.min.css') }}" media="screen">
+
+
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/fonts/ptsans/stylesheet.css') }}" media="screen">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/fonts/icomoon/style.css') }}" media="screen">
 
@@ -30,6 +34,7 @@
 
 <!-- jQuery-UI Stylesheet -->
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/jui/css/jquery.ui.all.css') }}" media="screen">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/jui/css/jquery.ui.timepicker.css') }}" media="screen">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/jui/jquery-ui.custom.css') }}" media="screen">
 
 <!-- Theme Stylesheet -->
@@ -37,7 +42,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/themer.css') }}" media="screen">
 
 <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" media="screen"> -->
-
 <title>@yield('title')</title>
 <link rel="icon" href="{{ asset('img/mi.jpg') }}"/>
 </head>
@@ -248,15 +252,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="icon-tablet"></i> 商品管理</a>
-                        <ul class='closed'>
+                        <a href="{{ URL('admin/goods') }}"><i class="icon-tablet"></i> 商品管理</a>
+                        <!-- <ul class='closed'>
                             <li><a href="{{ URL('admin/goods') }}">商品列表</a></li>
                             <li><a href="{{ URL('admin/goods/create') }}">添加商品</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li><a href="table.html"><i class="icon-table"></i> 统计管理</a></li>
-                    <li><a href="widgets.html"><i class="icon-cogs"></i> 评论管理</a></li>
-                    <li><a href="typography.html"><i class="icon-font"></i> 配送管理</a></li>
+                    <li><a href="typography.html"><i class="icon-font"></i> 订单管理</a></li>
+                    <li><a href="{{ URL('admin/comm') }}"><i class="icon-cogs"></i> 评论管理</a></li>
                     <li><a href="grids.html"><i class="icon-th"></i> 退货管理</a></li>
                     <li>
                         <a href="#"><i class="icon-cog"></i> 系统管理</a>
@@ -290,32 +293,27 @@
         <!-- Main Container End -->
         
     </div>
-
+    @section('myModal')
+    @show
     <!-- JavaScript Plugins -->
     <script src="{{ asset('admin/js/libs/jquery-1.8.3.min.js') }}"></script>
     <script src="{{ asset('admin/js/libs/jquery.mousewheel.min.js') }}"></script>
     <script src="{{ asset('admin/js/libs/jquery.placeholder.min.js') }}"></script>
-    <!--<script src="{{ asset('admin/custom-plugins/fileinput.js') }}"></script>-->
+    <script src="{{ asset('admin/custom-plugins/fileinput.js') }}"></script>
     
     <!-- jQuery-UI Dependent Scripts -->
     <script src="{{ asset('admin/jui/js/jquery-ui-1.9.2.min.js') }}"></script>
     <script src="{{ asset('admin/jui/jquery-ui.custom.min.js') }}"></script>
     <script src="{{ asset('admin/jui/js/jquery.ui.touch-punch.js') }}"></script>
+    <script src="{{ asset('admin/jui/js/timepicker/jquery-ui-timepicker.min.js') }}"></script>
+
 
     <!-- Plugin Scripts -->
     <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/colorpicker/colorpicker-min.js') }}"></script>
-    <!--[if lt IE 9]>
-    <script src="js/libs/excanvas.min.js"></script>
-    <![endif]-->
-    <script src="{{ asset('admin/plugins/flot/jquery.flot.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/flot/plugins/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/flot/pluginassetquery.flot.pie.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/flot/plugins/jquery.flot.stack.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/flot/plugins/jquery.flot.resize.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/colorpicker/colorpicker-min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/imgareaselect/jquery.imgareaselect.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/jgrowl/jquery.jgrowl-min.js') }}"></script>
     <script src="{{ asset('admin/plugins/validate/jquery.validate-min.js') }}"></script>
-    <script src="{{ asset('admin/custom-plugins/wizard/wizard.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/colorpicker/colorpicker-min.js') }}"></script>
 
     <!-- Core Script -->
     <script src="{{ asset('admin/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -327,6 +325,6 @@
     <!-- Demo Scripts (remove if not needed) -->
     <script src="{{ asset('admin/js/demo/demo.table.js') }}"></script>
     <script src="{{ asset('admin/js/demo/demo.dashboard.js') }}"></script>
-
+    <script src="{{ asset('admin/js/demo/demo.widget.js') }}"></script>
 </body>
 </html>

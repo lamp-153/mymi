@@ -4,9 +4,8 @@
 
 	<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span>
-                <i class="icon-user"></i> 商品列表
-            </span>
+            <span style='float:left;'><li class="icon-th-list"></li> 商品列表</span>
+            <button onclick="location.href='{{ URL('admin/goods/create') }}'" style='float:right' class="btn btn-success">添加商品</button>
         </div>
         <form name='delForm' action="{{ URL('admin/goods') }}" method='post'>
             <input type='hidden' name='_token' value='{{ csrf_token()}}'/>
@@ -29,7 +28,7 @@
                 </thead>
                 <tbody style='text-align:center'>
                 	@foreach($list as $user)
-                    <tr>
+                    <tr id="{{ $user->id }}">
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->category_name }}</td>
                         <td>{{ $user->goods_name }}</td>
@@ -40,7 +39,8 @@
                         <td>
                             <span class="btn-group">
                                 <a href='{{ URL("admin/goods/$user->id/edit") }}' class="btn btn-small"><i class="icon-pencil" title='修改'></i></a>
-                                <a href="javaScript:doDel({{ $user->id}})" class="btn btn-small"><i class="icon-trash" title='删除'></i></a>
+                                <a href='{{ URL("admin/goodsInfo/{$user->id}") }}' class="btn btn-small"><i class="icon-search" title='查看详情'></i> </a>
+                                <a href="javaScript:doDel({{ $user->id}})" class="btn btn-small"><i class="icon-trash" title='删除'></i> </a>
                             </span>
                         </td>
                     </tr>
@@ -68,7 +68,7 @@
                     success:function(data){
                         if(data>0){
                             //删除对应行
-                            $('td:contains('+id+')').parents('tr').remove();
+                            $('#'+id).remove();
                             alert('删除成功');
                         }else{
                             alert('删除失败');

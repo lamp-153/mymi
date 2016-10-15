@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <title>小米帐号 - 个人信息</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/info/index.css') }}" media="all"></head>
-  
+    <link rel="icon" href="{{ asset('img/mi.jpg') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/info/index.css') }}" media="all">
+    <style>
+    #info{
+      border:1px solid #cacaca;
+    }
+    </style>
+  </head>
   <body style="overflow-y: scroll;" class="zh_CN">
     <div class="popup_mask" style="display: none;" id="loadingMask">
       <div class="bkc"></div>
@@ -17,9 +22,9 @@
       <div class="wrap">
         <div class="layout bugfix_ie6 dis_none">
           <div class="n-logo-area clearfix">
-            <a href="https://account.xiaomi.com/" class="fl-l">
-              <img src="{{ asset('/img/n-logo.png') }}" srcset="{{ asset('/img/static/res/fa93d30/passport/acc-2014/img/n-logo.png 1x, /static/res/fb6d739/account-static/respassport/acc-2014/img/n-logo@2x.png 2x') }}"></a>
-            <a id="logoutLink" class="fl-r logout" href="home/logout">退出</a></div>
+            <a href="{{ URL('/') }}" class="fl-l">
+              <img src="{{ asset('/img/n-logo.png') }}"></a>
+            <a id="logoutLink" class="fl-r logout" href="{{ URL('home/logout') }}">退出</a></div>
           <!--头像 名字-->
           <div class="n-account-area-box">
             <div class="n-account-area clearfix">
@@ -76,29 +81,37 @@
                       <em class="na-edit"></em>
                     </div>
                     <div class="naImgLink">
-                      <a class="color4a9" href="/update" title="修改头像">修改头像</a></div>
+                      <a class="color4a9" href="/data" title="修改头像">修改头像</a></div>
                   </div>
                 </div>
                 <div class="main_r">
                   <div class="framedatabox">
                     <div class="fdata">
-                      <a class="color4a9 fr" href="/data" title="编辑" id="editInfo">
-                        <i class="iconpencil"></i>修改信息</a>
-                      <h3 style="color:red;">基础资料</h3></div>
+                      <a class="color4a9 fr" href="/info" title="编辑" id="editInfo">
+                        <i class="iconpencil"></i>返回</a>
+                      <h3>修改用户头像</h3></div>
                     <div class="fdata lblnickname">
-                      <p>
-                        <span>姓名：</span>
-                        <span class="value">{{ $list->user_realname }}</span></p>
+                      <form method='post' action="{{ URL('home/doUpdate')}}/{{ session('user')->id }}" enctype="multipart/form-data" id="content">
+          							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+          							<input type='file' name="user_avatar"><br><br><br>
+          							<input id="info" type="submit" value="修改">
+          							<a href="{{ URL('home/info') }}" id="basic">取消</a>
+          							 @if(session('msg'))
+          					            <p class="" style="color:red;">{{ session('msg') }}</p>
+          					          @else
+          					            <p></p>
+          					          @endif
+          						</form> 
                     </div>
-                    <div class="fdata lblgender">
+                    <!-- <div class="fdata lblgender">
                       <p>
                         <span>性别：</span>
                         <span class="value">{{ $list->user_sex == 1 ? "男" : "女"}}</span></p>
                     </div>
                     <div class="btn_editinfo">
-                      <a id="editInfoWap" class="btnadpt bg_normal" href="https://account.xiaomi.com/pass/auth/profile/home?userId=400785037">编辑基础资料</a></div>
+                      <a id="editInfoWap" class="btnadpt bg_normal" href="https://account.xiaomi.com/pass/auth/profile/home?userId=400785037">编辑基础资料</a></div> -->
                   </div>
-                  <div class="framedatabox">
+                 <!--  <div class="framedatabox">
                     <div class="fdata">
                       <h3>高级设置</h3></div>
                     <div class="fdata click-row">
@@ -118,7 +131,7 @@
                         </span>
                       </p>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="logout_wap">

@@ -18,7 +18,7 @@ class CreateStoreGoodsInfoTable extends Migration
             $table->integer('goods_id')->unsigned();
             $table->string('goods_info_type',255)->nullable();
             $table->string('goods_info_message',255)->nullable();
-            $table->string('goods_info_colore',255)->nullable();
+            $table->string('goods_info_color',255)->nullable();
             $table->string('goods_info_img',255)->nullable();
             $table->integer('goods_info_price')->unsigned();
         });

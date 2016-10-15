@@ -11,13 +11,20 @@ use Intervention\Image\ImageManagerStatic as Image;//使用第三方扩展实现
 class PhoneController extends Controller
 {
     //显示商品详情的页面
-    public function phone()
+    public function phone($id)
     {
     	//获取商品详情表中当前选中的详细信息
-        // $list = \DB::table('store_goods')->where('id','=',session('user')->id)->first();
-        $list = \DB::table('store_goods')->get();
-        // dd($list);
+		$list = \DB::table('store_goods')
+	      ->join('store_goods_info','store_goods.id','=','store_goods_info.goods_id')
+	      ->select('store_goods.*','store_goods_info.*')
+	      ->where('goods_id', $id)->get();
+	    // $list = $db->where('goods_id',$id);
+          // echo '<pre>';
+          // print_r($list);die();
+
+        $lists = \DB::table('store_goods')->where('is_onsale',1)->take(8)->get();
+
     	// 显示商品详情页面
-    	return view('phone',['list'=>$list]);
+    	return view('home/phone')->with(['list'=>$list,'lists'=>$lists]);
     }
 }

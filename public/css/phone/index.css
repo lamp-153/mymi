@@ -339,12 +339,12 @@ a:hover {
 	transition:all 0.2s ease 0s;
 }
 .site-header .logo:before {
-	background:url('../img/mi-logo.png') no-repeat scroll 50% 50% transparent;
+	background:url('../../img/mi-logo.png') no-repeat scroll 50% 50% transparent;
 	opacity:1;
 	transform:translate3d(0px,0px,0px);
 }
 .site-header .logo:after {
-	background:url('../img/mi-home.png') no-repeat scroll 50% 50% transparent;
+	background:url('../../img/mi-home.png') no-repeat scroll 50% 50% transparent;
 	opacity:0;
 	margin-left:-55px;
 	transform:translate3d(0px,0px,0px);
@@ -474,7 +474,7 @@ a:hover {
 	margin:30px auto 0px;
 	width:267px;
 	height:19px;
-	background:url('../img/slogan2016.png') no-repeat scroll center 0px transparent;
+	background:url('../../img/slogan2016.png') no-repeat scroll center 0px transparent;
 }
 .site-mini-header {
 	font-size:12px;
@@ -608,19 +608,19 @@ a:hover {
 	transition:opacity 1s ease 0s,transform 20s linear 0s;
 }
 .modal-bigtap-queue .queue-posters .poster-1 {
-	background-image:url('../img/bigtap-poster-1.jpg');
+	background-image:url('../../img/bigtap-poster-1.jpg');
 }
 .modal-bigtap-queue .queue-posters .poster-2 {
-	background-image:url('../img/bigtap-poster-2.jpg');
+	background-image:url('../../img/bigtap-poster-2.jpg');
 }
 .modal-bigtap-queue .queue-posters .poster-3 {
-	background-image:url('../img/bigtap-poster-3.jpg');
+	background-image:url('../../img/bigtap-poster-3.jpg');
 }
 .modal-bigtap-queue .queue-posters .poster-4 {
-	background-image:url('../img/bigtap-poster-4.jpg');
+	background-image:url('../../img/bigtap-poster-4.jpg');
 }
 .modal-bigtap-queue .queue-posters .poster-5 {
-	background-image:url('../img/bigtap-poster-5.jpg');
+	background-image:url('../../img/bigtap-poster-5.jpg');
 }
 .modal-bigtap-error {
 	width:900px;
@@ -1141,7 +1141,7 @@ ul,li,dl,dt,dd,p,em {
 .channel-mihone {
 	position:relative;
 	height:600px;
-	background:url('phone-section-05.jpg') no-repeat scroll center center transparent;
+	background:url('../../img/phone-section-05.jpg') no-repeat scroll center center transparent;
 }
 .channel-mihone .channel-mihone-des {
 	position:absolute;
